@@ -1,7 +1,10 @@
-class Person
+require '/nameable.rb'
+
+class Person < Nameable
   @id_counter = 1
 
-  def initialize(age, name: 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = @id_counter
     @id_counter += 1
     @name = name
@@ -14,6 +17,10 @@ class Person
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   private
