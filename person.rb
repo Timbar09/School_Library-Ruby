@@ -1,12 +1,9 @@
-require '/nameable.rb'
+require './nameable'
 
 class Person < Nameable
-  @id_counter = 1
-
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
-    @id = @id_counter
-    @id_counter += 1
+    @id = Random.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
