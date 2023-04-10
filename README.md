@@ -87,7 +87,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Use the "Decorator" design pattern.**
 - [ ] **Set up associations.**
 - [ ] **Add basic UI.**
 - [ ] **Refactor code.**
