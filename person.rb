@@ -1,9 +1,9 @@
 class Person
-  @@id = 1000
+  @id_counter = 1
 
-  def initialize(age, name = 'Unknown', parent_permission = true)
-    @id = @@id
-    @@id += 1
+  def initialize(age, name: 'Unknown', parent_permission: true)
+    @id = @id_counter
+    @id_counter += 1
     @name = name
     @age = age
     @parent_permission = parent_permission
