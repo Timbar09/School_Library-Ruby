@@ -85,3 +85,12 @@ class App
       puts "#{index + 1}) - Title: #{book.title}, Author: #{book.author}"
     end
   end
+
+  def people_list
+    return puts 'No people available' if @people.empty?
+
+    @people.each_with_index do |person, index|
+      puts "#{index + 1}) - Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
+  end
+end
