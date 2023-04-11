@@ -23,7 +23,7 @@ class App
       new_teacher
     else
       puts 'Invalid input'
-      create_person
+      new_person
     end
   end
 
@@ -65,4 +65,15 @@ class App
 
     @people << Teacher.new(age, specialization, name)
     puts 'Teacher created successfully'
+  end
+
+  def new_book
+    print 'Title: '
+    title = gets.chomp
+
+    print 'Author: '
+    author = gets.chomp
+
+    @books << Book.new(title, author)
+    puts 'Book created successfully'
   end
