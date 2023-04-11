@@ -93,4 +93,33 @@ class App
       puts "#{index + 1}) - Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
+
+  def new_rental
+    puts 'Select a book from the following list by number'
+    book_list
+    book_index = gets.chomp.to_i - 1
+
+    puts 'Select a person from the following list by number (not id)'
+    people_list
+    person_index = gets.chomp.to_i - 1
+
+    puts 'Date: '
+    date = gets.chomp
+
+    @rentals << Rental.new(date, @books[book_index], @people[person_index])
+    puts 'Rental created successfully'
+  end
+
+  def rental_list
+    return puts 'No rentals available' if @rentals.empty?
+
+    puts 'Enter ID of person: '
+    people_list
+    person_id = gets.chomp.to_i
+    person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+
+    person_rentals.each_with_index do |rental, index|
+      puts "Rental #{index + 1} - Book: #{rental.book.title} by #{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
+    end
+  end
 end
