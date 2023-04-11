@@ -47,10 +47,10 @@ class App
     print 'Name: '
     name = gets.chomp
 
-    parent_permissio = permission?
+    parent_permission = permission?
 
-    @people << Student.new(age, name, parent_permission)
-    puts 'Student created successfully'
+    @people << Student.new(nil, age, name, parent_permission)
+    puts 'Student created successfully!'
   end
 
   def new_teacher
@@ -63,8 +63,8 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    @people << Teacher.new(age, specialization, name)
-    puts 'Teacher created successfully'
+    @people << Teacher.new(specialization, age, name)
+    puts 'Teacher created successfully!'
   end
 
   def new_book
@@ -78,29 +78,29 @@ class App
     puts 'Book created successfully'
   end
 
-  def book_list
-    return puts 'No books available' if @books.empty?
+  def list_books
+    return puts 'No books available!' if @books.empty?
 
     @books.each_with_index do |book, index|
       puts "#{index + 1}) - Title: #{book.title}, Author: #{book.author}"
     end
   end
 
-  def people_list
-    return puts 'No people available' if @people.empty?
+  def list_people
+    return puts 'No people available!' if @people.empty?
 
     @people.each_with_index do |person, index|
-      puts "#{index + 1}) - Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      puts "#{index + 1}) - [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
 
   def new_rental
     puts 'Select a book from the following list by number'
-    book_list
+    list_books
     book_index = gets.chomp.to_i - 1
 
     puts 'Select a person from the following list by number (not id)'
-    people_list
+    list_people
     person_index = gets.chomp.to_i - 1
 
     puts 'Date: '
@@ -110,16 +110,17 @@ class App
     puts 'Rental created successfully'
   end
 
-  def rental_list
-    return puts 'No rentals available' if @rentals.empty?
-
+  def list_rentals
     puts 'Enter ID of person: '
-    people_list
+    list_people
     person_id = gets.chomp.to_i
     person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+    return puts 'No rentals found for this ID' if person_rentals.empty?
 
     person_rentals.each_with_index do |rental, index|
-      puts "Rental #{index + 1} - Book: #{rental.book.title} by #{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
+      the_rental = "Rental #{index + 1} - Book: #{rental.book.title}"
+      renter = "#{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
+      puts "#{the_rental} by #{renter}"
     end
   end
 end
