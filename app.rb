@@ -77,3 +77,11 @@ class App
     @books << Book.new(title, author)
     puts 'Book created successfully'
   end
+
+  def book_list
+    return puts 'No books available' if @books.empty?
+
+    @books.each_with_index do |book, index|
+      puts "#{index + 1}) - Title: #{book.title}, Author: #{book.author}"
+    end
+  end
