@@ -8,10 +8,10 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -48,12 +48,6 @@ This is a user-friendly tool that efficiently manages book inventory, borrowers,
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- Live Demo link comming soon.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -71,6 +65,14 @@ Clone this repository to your desired folder:
 ```sh
   cd my-folder
   git clone https://github.com/Timbar09/School_Library-Ruby.git
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
