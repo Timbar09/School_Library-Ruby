@@ -24,7 +24,7 @@ class App
     case person_type
     when '1' then new_student
     when '2' then new_teacher
-    when '3' then return
+    when '3' then nil
     else
       puts 'Invalid input'
       new_person
