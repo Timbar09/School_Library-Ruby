@@ -13,14 +13,18 @@ class App
   end
 
   def new_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    puts ''
+    puts 'Do you want to:'
+    puts '- Create a student (press 1) or a teacher (press 2)?'
+    puts '- Go back to main menu (press 3)'
+    puts ''
+    print 'Enter your choice: '
     person_type = gets.chomp
 
     case person_type
-    when '1'
-      new_student
-    when '2'
-      new_teacher
+    when '1' then new_student
+    when '2' then new_teacher
+    when '3' then return
     else
       puts 'Invalid input'
       new_person

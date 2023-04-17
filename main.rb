@@ -1,7 +1,8 @@
 require './classes/app'
+require './classes/options'
 
 def main
-  app = App.new
+  options = Options.new
 
   puts 'Welcome to School Library App!'
   puts ''
@@ -15,7 +16,7 @@ def main
       break
     end
 
-    options(option, app)
+    options.options(option)
   end
 end
 
