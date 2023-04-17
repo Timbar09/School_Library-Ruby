@@ -84,12 +84,12 @@ To run the project, execute the following command:
 | 👤 Author | GitHub | Twitter | LinkedIn |
 | :-- | :-- | :-- | :-- |
 | Miles Mosweu | [@Timbar09](https://github.com/Timbar09) | [@Milez09](https://twitter.com/Milez09) | [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09) |
+| Fitz Gerald | [@fitz95](https://github.com/fitz95) | [@nsonggerald](https://twitter.com/nsonggerald) | [@nsong-asoh](https://www.linkedin.com/in/nsong-asoh) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Refactor code.**
 - [ ] **Preserve data.**
 - [ ] **Add unit tests.**
 
