@@ -9,7 +9,7 @@ class App
 
   def initialize
     @data = ProcessData.new
-    @books = []
+    @books = @data.load_books
     @people = @data.load_people
     @rentals = []
   end

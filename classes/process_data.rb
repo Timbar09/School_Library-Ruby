@@ -46,4 +46,15 @@ class ProcessData
 
     @people
   end
+
+  def load_books
+    return unless File.size?('./data/books.json')
+
+    books = JSON.parse(File.read('./data/books.json'))
+    books.each do |book|
+      @books << Book.new(book['id'], book['title'], book['author'])
+    end
+
+    @books
+  end
 end
