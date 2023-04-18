@@ -2,11 +2,13 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require_relative './process_data'
 
 class App
   attr_reader :books, :people, :rentals
 
   def initialize
+    @data = ProcessData.new
     @books = []
     @people = []
     @rentals = []
@@ -53,7 +55,9 @@ class App
 
     parent_permission = permission?
 
-    @people << Student.new(nil, nil, age, name, parent_permission)
+    student = Student.new(nil, nil, age, name, parent_permission)
+    @people << student
+    @data.store_person(student)
     puts 'Student created successfully!'
   end
 
@@ -67,7 +71,9 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    @people << Teacher.new(nil, specialization, age, name)
+    teacher = Teacher.new(nil, specialization, age, name)
+    @people << teacher
+    @data.store_person(teacher)
     puts 'Teacher created successfully!'
   end
 
@@ -78,7 +84,9 @@ class App
     print 'Author: '
     author = gets.chomp
 
-    @books << Book.new(nil, title, author)
+    book = Book.new(nil, title, author)
+    @books << book
+    @data.store_book(book)
     puts 'Book created successfully'
   end
 
