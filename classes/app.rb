@@ -53,7 +53,7 @@ class App
 
     parent_permission = permission?
 
-    @people << Student.new(nil, age, name, parent_permission)
+    @people << Student.new(nil, nil, age, name, parent_permission)
     puts 'Student created successfully!'
   end
 
@@ -67,7 +67,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    @people << Teacher.new(specialization, age, name)
+    @people << Teacher.new(nil, specialization, age, name)
     puts 'Teacher created successfully!'
   end
 
@@ -78,7 +78,7 @@ class App
     print 'Author: '
     author = gets.chomp
 
-    @books << Book.new(title, author)
+    @books << Book.new(nil, title, author)
     puts 'Book created successfully'
   end
 
