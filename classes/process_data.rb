@@ -1,5 +1,6 @@
 require 'json'
-require_relative 'person'
+require_relative 'student'
+require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 
@@ -28,5 +29,21 @@ class ProcessData
     else
       File.write('./data/books.json', JSON.pretty_generate([book.to_json]))
     end
+  end
+
+  def load_people
+    return unless File.size?('./data/people.json')
+
+    people = JSON.parse(File.read('./data/people.json'))
+    people.each do |person|
+      case person['type']
+      when 'Student'
+        @people << Student.new(person['id'], person['classroom'], person['age'], person['name'], person['parent_permission'])
+      when 'Teacher'
+        @people << Teacher.new(person['id'], person['specialization'], person['age'], person['name'])
+      end
+    end
+
+    @people
   end
 end

@@ -10,7 +10,7 @@ class App
   def initialize
     @data = ProcessData.new
     @books = []
-    @people = []
+    @people = @data.load_people
     @rentals = []
   end
 
