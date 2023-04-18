@@ -10,7 +10,7 @@ class Book
     @rentals = []
   end
 
-  def to_json
+  def to_json(*_args)
     {
       'id' => @id,
       'title' => @title,

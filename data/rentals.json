@@ -1,0 +1,34 @@
+[
+  {
+    "date": "02/4/2023",
+    "book": {
+      "id": 914,
+      "title": "The Lion King",
+      "author": "Awesome Author"
+    },
+    "person": {
+      "type": "Student",
+      "id": 654,
+      "name": "Chad",
+      "age": "17",
+      "classroom": null,
+      "parent_permission": true
+    }
+  },
+  {
+    "date": "22/01/2023",
+    "book": {
+      "id": 360,
+      "title": "4",
+      "author": "Alalhaddin"
+    },
+    "person": {
+      "type": "Student",
+      "id": 438,
+      "name": "Fitz Gerald",
+      "age": "25",
+      "classroom": null,
+      "parent_permission": true
+    }
+  }
+]

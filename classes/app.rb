@@ -11,7 +11,7 @@ class App
     @data = ProcessData.new
     @books = @data.load_books
     @people = @data.load_people
-    @rentals = []
+    @rentals = @data.load_rentals
   end
 
   def new_person
@@ -128,12 +128,12 @@ class App
     puts 'Enter ID of person: '
     list_people
     person_id = gets.chomp.to_i
-    person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+    person_rentals = @rentals.select { |rental| rental.person['id'] == person_id }
     return puts 'No rentals found for this ID' if person_rentals.empty?
 
     person_rentals.each_with_index do |rental, index|
-      the_rental = "Rental #{index + 1} - Book: #{rental.book.title}"
-      renter = "#{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
+      the_rental = "Rental #{index + 1} - Book: #{rental.book['title']}"
+      renter = "#{rental.book['author']}, Person: #{rental.person['name']}, Date: #{rental.date}"
       puts "#{the_rental} by #{renter}"
     end
   end

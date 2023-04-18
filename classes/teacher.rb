@@ -8,7 +8,7 @@ class Teacher < Person
     @specialization = specialization
   end
 
-  def to_json
+  def to_json(*_args)
     {
       'type' => self.class.name,
       'id' => @id,

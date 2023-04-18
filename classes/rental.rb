@@ -6,9 +6,17 @@ class Rental
     @date = date
 
     @book = book
-    @book.rentals << self
+    @book.rentals << self if @book.is_a?(Book)
 
     @person = person
-    @person.rentals << self
+    @person.rentals << self if @person.is_a?(Person)
+  end
+
+  def to_json(*_args)
+    {
+      'date' => @date,
+      'book' => @book.to_json,
+      'person' => @person.to_json
+    }
   end
 end
