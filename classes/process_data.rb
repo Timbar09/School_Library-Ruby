@@ -31,6 +31,16 @@ class ProcessData
     end
   end
 
+  def store_rental(rental)
+    if File.size?('./data/rentals.json')
+      rental_file = JSON.parse(File.read('./data/rentals.json')) << rental.to_json
+
+      File.write('./data/rentals.json', JSON.pretty_generate(rental_file))
+    else
+      File.write('./data/rentals.json', JSON.pretty_generate([rental.to_json]))
+    end
+  end
+
   def load_people
     return unless File.size?('./data/people.json')
 

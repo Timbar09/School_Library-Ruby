@@ -118,7 +118,9 @@ class App
     puts 'Date: '
     date = gets.chomp
 
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
+    rental = Rental.new(date, @books[book_index], @people[person_index])
+    @rentals << rental
+    @data.store_rental(rental)
     puts 'Rental created successfully'
   end
 
