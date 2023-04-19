@@ -1,4 +1,3 @@
-require './classes/app'
 require './classes/book'
 require './classes/classroom'
 require './classes/decorator'
