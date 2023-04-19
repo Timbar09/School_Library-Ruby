@@ -1,15 +1,13 @@
 require_relative 'all_methods'
 
 describe Classroom do
-  context 'when creating a new classroom' do
+  context ': When creating a new classroom, it ' do
     classroom = Classroom.new('Math')
+    student = Student.new(nil, classroom, 17, 'John Doe', true)
 
-    it 'should have a label' do
-      expect(classroom.label).to eql('Math')
-    end
-
-    it 'should have no students' do
-      expect(classroom.students).to eql([])
+    it 'should have a method add_student that adds a student to the classroom' do
+      classroom.add_student(student)
+      expect(classroom.students).to eql([student])
     end
   end
 end

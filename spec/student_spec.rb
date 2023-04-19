@@ -1,33 +1,22 @@
 require_relative 'all_methods'
 
 describe Student do
-  context 'When testing the Student class, it' do
+  context ': When testing the Student class, it' do
     physics = Classroom.new('Physics')
     parent_permission = true
     tokyo = Student.new(nil, physics, 16, 'Tokyo', parent_permission)
 
-    it 'should create a new student' do
-      expect(tokyo).to be_a(Student)
+    it 'should have a method to_json' do
+      expect(tokyo.to_json).to be_a(Hash)
     end
 
-    it 'should have an id' do
-      expect(tokyo.id).to be_a(Integer)
+    it 'should have a method play_hooky' do
+      expect(tokyo.play_hooky).to eq '¯(ツ)/¯'
     end
 
-    it 'should have the correct name' do
-      expect(tokyo.name).to eq('Tokyo')
-    end
-
-    it 'should have the correct age' do
-      expect(tokyo.age).to eq(16)
-    end
-
-    it 'should have the correct parent permission' do
-      expect(tokyo.can_use_services?).to be_truthy
-    end
-
-    it 'should have a classroom' do
-      expect(tokyo.classroom).to be_a(Classroom)
+    it 'should have a method add_classroom' do
+      tokyo.add_classroom(physics)
+      expect(tokyo.classroom).to eq physics
     end
   end
 end
