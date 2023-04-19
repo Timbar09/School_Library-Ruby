@@ -2,7 +2,6 @@ require_relative 'all_methods'
 
 describe Book do
   context 'when creating a new book' do
-
     test_book = Book.new(nil, 'The Hobbit', 'J.R.R. Tolkien')
 
     it('should have an id') do
