@@ -3,8 +3,10 @@ require './classes/options'
 
 def main
   options = Options.new
-
-  puts 'Welcome to School Library App!'
+  puts '___________________________________________________________'
+  puts ''
+  puts 'WELCOME TO THE SCHOOL LIBRARY APP'
+  puts '___________________________________________________________'
   puts ''
 
   loop do

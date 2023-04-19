@@ -1,0 +1,25 @@
+[
+  {
+    "type": "Student",
+    "id": 654,
+    "name": "Chad",
+    "age": "17",
+    "classroom": null,
+    "parent_permission": true
+  },
+  {
+    "type": "Teacher",
+    "id": 850,
+    "name": "Chuck",
+    "age": "71",
+    "specialization": "Martial arts"
+  },
+  {
+    "type": "Student",
+    "id": 438,
+    "name": "Fitz Gerald",
+    "age": "25",
+    "classroom": null,
+    "parent_permission": true
+  }
+]

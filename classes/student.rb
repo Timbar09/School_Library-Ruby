@@ -1,11 +1,24 @@
 require_relative './person'
+require 'json'
 
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(classroom, age, name, parent_permission)
-    super(age, name, parent_permission)
+  def initialize(id, classroom, age, name, parent_permission)
+    super(id, age, name)
     @classroom = classroom
+    @parent_permission = parent_permission
+  end
+
+  def to_json(*_args)
+    {
+      'type' => self.class.name,
+      'id' => @id,
+      'name' => @name,
+      'age' => @age,
+      'classroom' => @classroom,
+      'parent_permission' => @parent_permission
+    }
   end
 
   def play_hooky
