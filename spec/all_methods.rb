@@ -1,0 +1,8 @@
+require './classes/book'
+require './classes/classroom'
+require './classes/decorator'
+require './classes/nameable'
+require './classes/person'
+require './classes/rental'
+require './classes/student'
+require './classes/teacher'
