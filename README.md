@@ -81,6 +81,12 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
+  rspec ./spec/[name of test-file]
+```
+
+For example:
+
+```sh
   rspec ./spec/teacher_spec.rb
 ```
 
