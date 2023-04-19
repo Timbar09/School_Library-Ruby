@@ -4,6 +4,10 @@ describe Person do
   context ': When creating a new person, it ' do
     test_person = Person.new(nil, 20, 'John')
 
+    it('should create a person') do
+      expect(test_person).to be_a Person
+    end
+
     it('should have a method can_use_services') do
       expect(test_person.can_use_services?).to be true
     end

@@ -6,6 +6,10 @@ describe Student do
     parent_permission = true
     tokyo = Student.new(nil, physics, 16, 'Tokyo', parent_permission)
 
+    it 'should create a student' do
+      expect(tokyo).to be_a(Student)
+    end
+
     it 'should have a method to_json' do
       expect(tokyo.to_json).to be_a(Hash)
     end

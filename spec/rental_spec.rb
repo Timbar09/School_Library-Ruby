@@ -7,6 +7,10 @@ describe Rental do
 
     test_rental = Rental.new('2020-01-01', book, person)
 
+    it('should create a rental') do
+      expect(test_rental).to be_a Rental
+    end
+
     it('should have a date') do
       expect(test_rental.date).to eq '2020-01-01'
     end
